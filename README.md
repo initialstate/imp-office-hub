@@ -1,4 +1,4 @@
-#Electric Imp Explorer Office Sensor Hub
+#Electric Imp Office Sensor Hub
 ---
 
 #Introduction
