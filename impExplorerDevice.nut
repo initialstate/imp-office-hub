@@ -51,6 +51,13 @@ function flashLed() {
     led.set(0, [0,0,0]).draw();
 }
 
+function loop() {
+    // Take a reading
+    takeReading();
+    
+    // Wait 10 seconds between readings
+    imp.wakeup(10, loop);
+}
 
 // Start of program
 
@@ -76,9 +83,5 @@ motion.configure(DIGITAL_IN);
 light <- hardware.pin5;
 light.configure(ANALOG_IN); // Change to DIGITAL_IN if using digital light sensor
 
-while (true) {
-    // Take a reading
-    takeReading();
-    // Sleep 10 sec between readings
-    imp.sleep(10);
-}
+// Start taking readings
+loop();
